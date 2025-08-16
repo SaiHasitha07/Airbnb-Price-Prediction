@@ -47,12 +47,15 @@ Selected the best-performing model for final predictions.
 📊 Results:
 
 Best Model: Gradient Boosting Regressor
+
 R² Score: Example: 0.85
+
 RMSE: Example: 45.3
 
 Insights: Neighborhood, room type, and number of reviews were the most influential features.
 
 📦 Technologies & Libraries Used:
+
 Python
 Pandas
 NumPy
