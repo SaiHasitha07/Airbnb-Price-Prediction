@@ -1,72 +1,57 @@
 # Airbnb-Price-Prediction
-📌 Project Overview:
-This project focuses on predicting the nightly prices of Airbnb listings using machine learning techniques. The dataset contains detailed listing information such as location, property type, amenities, and host characteristics. The goal is to build a model that can accurately estimate prices based on these features, helping hosts set competitive rates and assisting guests in identifying fair deals.
+# Airbnb Price Prediction
 
-📂 Dataset:
-The dataset used in this project is sourced from Kaggle:
-Airbnb Price Prediction Dataset
-It contains various features including:
-Listing ID
-Neighbourhood & City
-Room Type
-Number of Guests
-Number of Reviews
-Amenities
-Host Information
-Price (Target Variable)
+## 📌 Project Overview
+This project builds an **ML model** to predict nightly **Airbnb listing prices** using listing metadata (location, room type, reviews, host details, amenities).  
+The solution provides price drivers and estimates to support **competitive pricing** and **market analysis**.
 
-🛠️ Project Workflow:
-1. Data Exploration & Cleaning
-Handled missing values and removed irrelevant features.
-Converted categorical variables into numerical form.
-Performed feature scaling where required.
+## 📂 Dataset
+- **Source**: Kaggle – [Airbnb Price Prediction](https://www.kaggle.com/stevezhenghp/airbnb-price-prediction)  
+- Typical fields:
+  - Location / Neighbourhood
+  - Room Type & Property Type
+  - Accommodates / Beds / Bathrooms
+  - Amenities & Description
+  - Reviews & Ratings
+  - Host Tenure
+  - **Price** (target)
 
-2. Exploratory Data Analysis (EDA)
-Visualized price distribution across different neighborhoods and property types.
-Identified key factors influencing price.
-Detected outliers and unusual patterns in pricing.
+## 🛠️ Project Workflow
 
-3. Feature Engineering
-Created new features such as price per guest and amenities count.
-Encoded location-based features for better model performance.
+### 1. **Data Preparation**
+- Cleaned records, handled missing values and outliers.
+- Standardized formats (dates, text, numerical units).
+- Encoded categorical variables for modeling.
 
-4. Model Building
-Implemented multiple regression and tree-based models, including:
-Linear Regression
-Random Forest Regressor
-Gradient Boosting Regressor
-Performed hyperparameter tuning to optimize performance.
+### 2. **Feature Engineering**
+- Derived features: **amenities_count**, **price_per_guest**, **host_tenure_days**.
+- One-hot / target encoding for high-cardinality fields.
+- Optional log-transform for skewed target distribution.
 
-5. Model Evaluation
-Evaluated models using:
-R² Score
-Mean Absolute Error (MAE)
-Root Mean Squared Error (RMSE)
-Selected the best-performing model for final predictions.
+### 3. **Modeling & Evaluation**
+- Baselines: **Linear/Ridge/Lasso Regression**.
+- Trees/ensembles: **Random Forest**, **Gradient Boosting** (XGBoost/LightGBM optional).
+- Metrics: **MAE**, **RMSE**, **R²** with cross-validation.
 
-📊 Results:
+### 4. **Analysis & Insights**
+- Identified top price drivers (location, room type, capacity, amenities).
+- Compared neighbourhood-level pricing bands and seasonal effects.
+- Produced explainability visuals (feature importance, partial dependence).
 
-Best Model: Gradient Boosting Regressor
+## 📊 Key Features
+- **End-to-end pipeline**: cleaning → features → training → evaluation.
+- **Interpretability-first**: clear view of drivers impacting price.
+- **Reusable notebook/scripts** for rapid experimentation.
 
-R² Score: Example: 0.85
+## 📦 Tools & Technologies
+- **Python**, **Pandas**, **NumPy**
+- **Scikit-learn**
+- **Matplotlib**, **Seaborn**, **Plotly**
 
-RMSE: Example: 45.3
+## 🚀 Future Improvements
+- Add **calendar seasonality** and event-based features.
+- Incorporate **geospatial encodings** (grid/H3) for neighbourhood effects.
+- Deploy a **Streamlit** app for interactive price estimation.
 
-Insights: Neighborhood, room type, and number of reviews were the most influential features.
-
-📦 Technologies & Libraries Used:
-
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-
-🚀 Future Improvements:
-Incorporate additional datasets for seasonal price trends.
-Integrate NLP-based sentiment analysis from listing descriptions and reviews.
-Deploy the model as a web application for real-time predictions.
-
-📜 License:
-This project is open-source and free to use for educational purposes.
+## 📜 License
+Open for educational and portfolio use. Attribute original dataset per [Kaggle terms](https://www.kaggle.com/stevezhenghp/airbnb-price-prediction).
